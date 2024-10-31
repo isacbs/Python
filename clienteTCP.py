@@ -7,7 +7,7 @@ arq = input("Digite o nome do arquivo para enviar: ") # Solicita o nome do arqui
 
 cliente_socket.send(arq.encode())  # Envia o nome do arquivo para o servidor, converte o nome para bytes e o envia
 
-with open(arq, 'lb') as file:  # Abre o arquivo para leitura binária e envia em blocos, 'lb' indica leitura binária
+with open(arq, 'rb') as file:  # Abre o arquivo para leitura binária 
     for parte in iter(lambda: file.read(1024), b''):  # Itera em blocos de 1024 bytes até o fim do arquivo
         cliente_socket.send(parte)
 
