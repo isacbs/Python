@@ -17,20 +17,19 @@ while True:
             pygame.quit()
             exit()
         if event.type == KEYDOWN:
-            if event.key==K_LEFT:
-                move_x=-1
-            if event.key==K_RIGHT:
-                move_x=1
-            if event.key==K_UP:
-                move_x=-1
-            if event.key==K_DOWN:
-                move_x=-1
+            if event.key == K_LEFT:
+                move_x = -1
+            elif event.key == K_RIGHT:
+                move_x = 1
+            elif event.key == K_UP:
+                move_y = -1
+            elif event.key == K_DOWN:
+                move_y = 1
         if event.type == KEYUP:
-            if event.key == (K_LEFT, K_RIGHT):
-                move_x=0
-            if event.key == (K_UP, K_DOWN):
-                move_y=0
-                 
+            if event.key in (K_LEFT, K_RIGHT):
+                move_x = 0
+            if event.key in (K_UP, K_DOWN):
+                move_y = 0
 
         x += move_x
         y += move_y
