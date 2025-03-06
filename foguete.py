@@ -23,23 +23,23 @@ class NaveEspacial(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = self.position
 
-        def update(self):
-            keys = pygame.key.get_pressed()
+    def update(self):
+        keys = pygame.key.get_pressed()
 
-            if keys[K_LEFT]:
-                self.position.x -= self.speed
-            if keys[K_RIGHT]:
-                self.position.x += self.speed    
-            if keys[K_UP]:
+        if keys[K_LEFT]:
+            self.position.x -= self.speed
+        if keys[K_RIGHT]:
+            self.position.x += self.speed    
+        if keys[K_UP]:
                 self.position.y -= self.speed
-            if keys[K_DOWN]:
-                self.position.y += self.speed
+        if keys[K_DOWN]:
+            self.position.y += self.speed
 
-            if keys[K_N]:
-                self.speed += 1
-            if keys[K_M] and self.speed > 1:
-                self.speed -= 1
-            self.rect.center = self.position
+        if keys[K_n]:
+            self.speed += 1
+        if keys[K_m] and self.speed > 1:
+            self.speed -= 1
+        self.rect.center = self.position
                 
 def main():
     nave = NaveEspacial("Nave 1")
